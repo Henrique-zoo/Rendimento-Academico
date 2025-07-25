@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package personal.rendimentoacademico.app.models;
+package personal.rendimentoacademico.app.model;
 
 /**
  *
@@ -15,7 +15,7 @@ public class Subject {
     private int credits;
     private String grade;
     private boolean mandatory;
-    private int semesterId;
+    private Integer semesterId;
     
     public Subject() {}
     
@@ -47,7 +47,7 @@ public class Subject {
     public boolean isMandatory() {
         return mandatory;
     }
-    public int getSemesterId() {
+    public Integer getSemesterId() {
         return semesterId;
     }
     
@@ -69,7 +69,19 @@ public class Subject {
     public void setMandatory(boolean mandatory) {
         this.mandatory = mandatory;
     }
-    public void setSemesterId(int semesterId) {
+    public void setSemesterId(Integer semesterId) {
         this.semesterId = semesterId;
+    }
+    
+    public int getGradeWeight() throws IllegalArgumentException {
+        return switch(this.grade) {
+            case "SS" -> 5;
+            case "MS" -> 4;
+            case "MM" -> 3;
+            case "MI" -> 2;
+            case "II" -> 1;
+            case "SR" -> 0;
+            default -> throw new IllegalArgumentException(String.format("A menção %s não é válida", this.grade));
+        };
     }
 }

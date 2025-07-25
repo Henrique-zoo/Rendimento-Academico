@@ -14,8 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import personal.rendimentoacademico.app.models.Subject;
-import personal.rendimentoacademico.app.models.Semester;
+import personal.rendimentoacademico.app.model.Subject;
+import personal.rendimentoacademico.app.model.Semester;
 
 /**
  *

@@ -11,8 +11,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import personal.rendimentoacademico.app.models.Semester;
-import personal.rendimentoacademico.app.models.Subject;
+import personal.rendimentoacademico.app.model.Semester;
+import personal.rendimentoacademico.app.model.Subject;
 import personal.rendimentoacademico.app.utils.DBUtil;
 
 /**
