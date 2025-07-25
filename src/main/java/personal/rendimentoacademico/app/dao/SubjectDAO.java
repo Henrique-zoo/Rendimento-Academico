@@ -151,4 +151,20 @@ public class SubjectDAO {
             }
         }
     }
+    
+    public static void delete(Integer id) throws SQLException {
+        if (id == null) {
+            throw new IllegalArgumentException("O ID não pode ser null");
+        }
+        
+        try(
+            Connection connection = DBUtil.getConnection();
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM subject WHERE id = ?")
+        ) {
+            statement.setInt(1, id);
+            if (statement.executeUpdate() == 0) {
+                throw new SQLException(String.format("Semestre %d não encontrado para exclusão", id));
+            }
+        }
+    }
 }
